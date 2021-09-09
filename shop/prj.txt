@@ -1,9 +1,0 @@
-Main Folder : shop    > img
-
-               prj     >about.html>about your shop and photo
-                      > product.html
-                      > product list by table>img name price
-                      > contact.html>shop map/ contact form
-
-             index.html (Home page > inroduction and some photo)
-             Home | About | Product | Contact

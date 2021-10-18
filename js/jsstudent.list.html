@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+    <h3>Student Register</h3>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name"> <br>
+    <label for="city">City</label>
+    <input type="text" name="city" id="city"> <br>
+    <button onclick="register()">Register</button>
+
+     <h3>Student List</h3>
+     <table border="1" cellpadding="10">
+           <thead>
+               <th>No.</th>
+               <th>Name</th>
+               <th>City</th>
+               
+
+               
+           </thead>
+           <tbody id="studentlist">
+
+           </tbody>
+     </table>
+
+
+     <script>
+
+
+         let studentlist=[]
+        
+
+         
+           
+           function register(){
+            let html=''
+         let i = 1
+               let name=document.querySelector("#name").value
+               let city=document.querySelector("#city").value
+
+               let student=[name,city]
+               studentlist.push(student)
+               console.log(studentlist);
+               
+           
+               
+
+               studentlist.forEach(
+                       (element) => {
+                           console.log(element);
+                           let name=element[0];
+                           let city=element[1];
+
+                           
+
+                           console.log(name,city);
+                       
+                           
+
+                           html +=`
+                                   <tr>
+                                         <td>${i++}</td>
+                                         <td>${name}</td>
+                                         <td>${city}</td>
+
+                                   </tr>
+                           `;
+
+                                   
+                           
+                           
+                           
+                           
+                           
+
+
+
+                       }
+                   
+               )
+               
+               document.querySelector("#studentlist").innerHTML=html
+               
+         
+          }
+         
+       
+   
+     
+         
+     </script>
+</body>
+</html>

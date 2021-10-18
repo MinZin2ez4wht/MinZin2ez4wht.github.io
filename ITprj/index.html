@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ITPrj4img/Page Logo.jpg">
+    <link rel="stylesheet" href="CssITPrj/prj.css">
+    
+
+<body>
+ 
+    <!--Navigation-->
+    <nav class="nav_itcolor">
+      <div class="nav_it">
+      <img src="ITPrj4img/logo.jpg" class="Logo">
+      <a href="Prj.html" class="itname">International Technology</a>
+      </div>
+     <ul>
+       <li>Home</li>
+       <li>About</li>
+       <li>Blog</li>
+       <li>Service</li>
+       <li>Contact</li>
+     </ul>
+
+      
+     
+    </nav>
+    <!--Slide Show-->
+    <section>
+     <img class="mySlides" src="ITPrj4img/slide1.jpg" style="width:100%" height="100%">
+     <img class="mySlides" src="ITPrj4img/slide2.jpg" style="width:100%" height="100%">
+     <img class="mySlides" src="ITPrj4img/slide3.jpg" style="width:100%" height="100%">
+
+    </section>
+
+    
+
+    <!--Band Description-->
+    
+      <!--Footer-->
+      <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+        <a href="#"><i class="fa fa-facebook-official"></i></a>
+        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-flickr"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <p class="w3-medium">
+        Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+        </p>
+      </footer>
+      
+    <script>
+        // Automatic Slideshow - change image every 3 seconds
+        var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,823 @@
+/*Pixel.com*/
+@font-face {
+    font-family: great;
+    src: url(../Great_Vibes/GreatVibes-Regular.ttf);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.Logo{
+    width: 110px;
+    height: 70px;
+    display: block;
+    margin-left:30px;
+}
+.nav_background{
+    background-color: #16191c;
+}
+.nav_brand{
+    display: inline-block;
+}
+.nav_background ul{
+    float: right;  
+}
+.nav_background ul li{
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    margin-right:40px;
+    padding-top:30px;
+}
+.brand_name{
+    margin-left: 40px;
+    text-decoration: none;
+    color:white;
+    font-family: great;
+}
+.nav_background ul li:hover{
+    color: yellow;
+    transform: translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+.background{
+    background-image: url(../img4prj/background.jpg);
+    height: 735px;
+}
+.beerbar{
+    position: absolute;
+    top: 300px;
+    left: 350px;
+    color: gold;
+    font-family: great;
+    font-size: 40px;
+}
+.shop{
+    border: 1px solid gold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: black;
+    color: gold;
+    margin-left: 100px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+div.grid div{
+    border:4px solid #212126;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 30px 30px 30px 40px;
+}
+div.grid div.grid_one{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  text-align: left;
+  padding: 70px 50px 50px 70px;
+}
+.readmore{
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 15px;
+}
+.para{
+    margin-top: 10px;
+}
+.perfect{
+    color: gold;
+}
+div.whitebackground img{
+    width: 500px;
+    height: 350px;
+    float:left;
+    margin-top: 50px;
+    margin-left: 90px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+div.whitebackground_text{
+    position: relative;
+    top: 100px;
+    left: 80px;
+    width: 90%;
+}
+.clear{
+    clear: both;
+}
+div.bottle img{
+    float: right;
+    margin-top: 30px;
+    margin-left: 140px;
+}
+.readmore2{
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+div.bottlebackground{
+    position: relative;
+    top: 70px;
+    left: 90px;
+    width: 35%;
+}
+div.bottle{
+    background-color: black;
+    color: white;
+   height: 350px;
+   margin-top: 50px;
+}
+div.whitebackgroundbody .white_background{
+    width: 35%;
+    float:left;
+    margin-top: 70px;
+    margin-left: 150px;
+}
+div.whitebackgroundbody .white_background_text{
+    position: relative;
+    width: 85%;
+    top: 70px;
+    left: 50px;
+}
+.whitespace{
+    margin-top: 20px;
+}
+footer.footer{
+    height: 100px;
+    background-color: black;
+    color: white;
+    margin-top:70px;
+}
+.design_by{
+    float: left;
+    margin-top: 40px;
+    margin-left: 90px;
+}
+footer.footer a{
+    float: right;
+    margin-right:50px;
+   padding-top:35px;
+   color: yellow;
+}
+.heading{
+    margin-top: 20px;
+    color: deepskyblue;
+    margin-left: 30px;
+}
+.aboutimg img{
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    float: left;
+    border: 1px solid black;
+    border-radius: 3px;
+    height: 350px;
+}
+.About_background{
+    position: relative;
+}
+.para2{
+    margin:25px 35px 20px 10px;
+}
+.About_click{
+width: 100px;  
+height: 45px;
+border-radius: 5px;
+background-color:orange;
+color:black;  
+font-family:Notoo; 
+}
+.click{
+    margin-top: 5px;
+    font-family: Notoo;
+    padding-left: 3px;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+/*.dotted{
+border-bottom: 1px dashed#000;
+text-decoration: none;
+}*/
+.first{
+    margin-top: 20px;
+}
+.first img{
+   margin-left: 20px;
+}
+.backgroundpage{
+    background-color: black;
+    color: white;
+}
+.forabout{
+    background-color: black;
+    width: 1500px;
+}
+.list ul li{
+    margin-left: 580px;
+}
+div.first_model{
+   float: right;
+   width: 35%;
+   margin-top: 50px;
+   margin-left: 150px;
+   margin-right: 100px;
+}
+div.second_model{
+    position: relative;
+    width: 85%;
+    top: 50px;
+    left: 50px; 
+}
+div.background2{
+    background-color: black;
+   color:white;
+    height: 500px;
+}
+div.click .About_click:hover{
+    transform:translate(4px,-3px);
+}
+.work_grid{
+   margin-bottom:30px;
+   display: grid;
+   grid-template-columns: auto auto;
+   background-color: whitesmoke;
+   color: black;
+   
+}
+.worker_img img{
+    margin-top: 60px;
+    margin-left: 40px;
+}
+div.worker_img img{
+   float:left;
+    height: 300px;
+    width: 400px;
+}
+.machine_img img{
+    margin-top: 60px;
+    margin-right: 20px;
+}
+.para4{
+    margin-top: 60px;
+    margin-left: 80px;
+    margin-right: 60px;
+}
+.para5{
+    margin-top: 60px;
+}
+.click5{
+    margin-top: 20px;
+   font-family: Vibes;
+  height: 35px;
+  border-radius: 5px;
+  background-color: orange;
+  color: black;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+div.work_grid .click5:hover{
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+div.sen_grid .patten1:hover{
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+div.social .patten2:hover{
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+.For_Para{
+   background-color: black;
+   color: white;
+   height: 320px;  
+}
+
+@font-face {
+    font-family:Teko;
+    src: url(../Great_Vibes/Teko-Light.ttf);
+}
+.H1{
+    margin-top: 20px;
+    font-family:Teko;
+    margin-left: 60px;
+    color: orangered;
+}
+.H2{
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.Para{
+    margin-left: 60px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}
+div.En img{
+    border-radius: 9px;
+    height: 300px;
+    width: 450px;
+}
+div.social img{
+    border-radius: 9px;
+    height: 300px;
+    width: 450px;
+    margin-bottom: 100px;
+    margin-right: 550px;
+}
+.bot_para{
+    margin-top: 20px;
+    margin-bottom:10px;
+    margin-left: 360px;
+    margin-right: 360px;
+    text-align: center;
+}
+.bot_para1{
+    margin-top: 20px;
+    margin-right: 30px;
+}
+.bot_para2{
+    margin-bottom: 10px;
+}
+.En_header{
+    margin-top: 30px;
+}
+.patten1{
+    margin-top: 40px;
+  margin-bottom:50px;
+  background-color: orange;
+  color:black;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-family: Notoo;
+}
+.patten2{
+    margin-left: 550px;
+    background-color: orange;
+    color:black;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-family: Notoo;
+}
+.social_header{
+    text-align: center;
+}
+@font-face {
+    font-family:Vibes ;
+    src: url(../Great_Vibes/OpenSansCondensed-Bold.ttf);
+}
+.Logo_Size{
+   
+  background-image: url(../img4prj/Logo.jpg);
+        height: 560px;
+}
+.shopclass1{
+    text-align: center;
+    margin-top: 30px;
+}
+.shopclass2{
+    padding-left: 500px;
+    padding-right: 500px;
+    margin-top: 15px;
+}
+.click2{
+    font-family: Notoo;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    height: 35px;
+    margin-left: 30px;
+    margin-top: 25px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.click7{
+    font-family: Notoo;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    height: 35px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.shopclass3{
+    margin-left: 30px;
+}
+.shopmain{
+    margin-top: 90px;
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+}
+.shopclass3 button:hover{
+    color:black;
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+.shopclass3{
+    grid-gap: 40px;
+}
+.shopclass3 img{
+    float: right;
+    height: 300px;
+    width: 150px;
+}
+div.shop_beer img{
+    height: 450px;
+    width: 250px;
+}
+div.shop_beer{
+    text-align: center;
+    margin-top: 20px;
+    color:black;
+    border: 3px solid whitesmoke;
+}
+div.shop_beer:hover{
+    color:black;
+    transform:translate(3px,-3px);
+    transition-duration: 0.5s;
+}
+.shop_mainn{
+    font-family: Notoo;
+    text-align: center;
+    margin-top: 50px;
+}
+div.shopmain div{
+    background-color:beige;
+    color: white;
+}
+div.shopmain{
+    grid-gap: 10px;
+    text-align: center;
+}
+.para3{
+    padding-top: 20px;
+    padding-right: 70px;
+    padding-left: 30px;
+    padding-bottom: 15px;
+}
+div.shop_gridd{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+}
+div.shop_beer{
+    grid-gap: 40px;
+}
+.shop_teq{
+    font-family: Noto;
+    text-align: center;
+    margin-top: 80px;
+}
+.shopclass3:hover{
+    background-color: burlywood;
+}
+.header{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+@font-face {
+    font-family:font ;
+    src: url(../Great_Vibes/Anton-Regular.ttf);
+}
+.font{
+    font-family: font;
+    text-align: center;
+}
+.font2{
+    font-family: font;
+    text-align: center;
+    margin-top: 50px;
+}
+.headline{
+    margin-top: 60px;
+    text-align: center;
+}
+.click3{
+    font-family: Vibes;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    height: 40px;
+    width: 80px;
+    margin-left: 50px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.click4{
+    font-family: Vibes;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    height: 40px;
+    width: 80px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.shopmain2{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+div.shopclass4{
+    margin-left: 130px; 
+}
+.h1{
+    text-align: center;
+}
+.for_logo{
+    text-align: center;
+}
+.logo_margin{
+    margin-top: 50px;
+}
+.shopclass4 button:hover{
+    color:black;
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+div.shop_menu a{
+    display: inline-block;
+    text-decoration: none;
+    color: brown;
+}
+/*.shop_grip{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}*/
+div.about_background{
+    background-image: url(../img4prj/about.webp);
+    height: 330px;
+ 
+}
+div.contact_background{
+    background-image: url(../img4prj/contact.jpg);
+    height: 400px;
+}
+@font-face {
+    font-family: Noto;
+    src: url(../Great_Vibes/NotoSerif-BoldItalic.ttf);
+}
+.contact_heading{
+    margin-top: 40px;
+    margin-left: 90px;
+    font-family: Noto;
+}
+.contact_para{
+    margin-left: 90px;
+    margin-top: 20px;
+    margin-right: 90px;
+}
+.ph{
+    margin-top: 90px;
+    margin-left: 90px;
+    margin-bottom: 40px;
+}
+.ph a{
+    text-decoration: none;
+    display:inline-block;
+    color: black;
+}
+input[type="text"]{
+        outline:none;
+}
+input[type="text"],input[type="number"],input[type="email"]{
+    width: 40%;
+    border: 2px solid #ccc;
+    height: 50px;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin-left: 90px;
+    margin-top: 5px;
+    font-family: Noto_ita;
+}
+textarea#address{
+    width: 40%;
+    outline: none;
+    border-radius: 5px;
+    height: 80px;
+   padding-left: 5px;
+   font-family: Noto_ita; 
+}
+#option{
+    width: 101%;
+    border-radius: 5px;
+    height: 50px;
+    transition: 0.5s;
+    outline: none;
+    padding-left: 5px;
+    margin-left: 90px;
+    outline: none;
+    font-family: Noto_ita;
+}
+#option select{
+    width: 40%;
+    height: 50px;
+    font-family: Noto_ita;
+}
+.mar_bot{
+   height: 600px;
+}
+@font-face {
+    font-family:Notoo;
+    src: url(../Great_Vibes/NotoSerif-Regular.ttf);
+}
+@font-face {
+    font-family:Noto_ita ;
+    src: url(../Great_Vibes/NotoSerif-Italic.ttf);
+}
+.patt_sub{
+    font-family:Notoo;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: 7%;
+    height: 40px; 
+    letter-spacing: 2px;
+}
+div.another_contact{
+    padding-right: 500px;
+    float: right;
+}
+.contact_wave{
+    font-family: Noto_ita;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    height: 40px;
+}
+.oth_ser{
+    font-family: Notoo;
+    float: right;
+   padding-right: 568px;
+   margin-top: 10px;
+}
+.contact_wave1{
+    font-family: Noto_ita;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    height: 40px;
+    margin-top: 10px;
+}
+@font-face {
+    font-family:Sans ;
+    src: url(../Great_Vibes/OpenSansCondensed-Light.ttf);
+}
+.font_sty{
+    font-family: Sans;
+    margin-top: 50px;
+    margin-left: 40px;
+    font-size: 25px;
+}
+div.con_align{
+    margin-top: 30px;
+    margin-left: 40px;
+  
+}
+.font_sty2{
+    font-family: Sans;
+    font-size: 20px;
+}
+.con_float{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.email_but{
+    font-family: Noto_ita;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    height: 30px;
+    margin-top: 10px;
+}
+.con_grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.con_align2{
+    margin-top: 18px;
+}
+.mail_float{
+    float: right;
+    padding-right: 190px;
+}
+.office_float{
+    float: right;
+    padding-right: 190px;
+}
+.media_float{
+    float: right;
+    padding-right: 190px;
+}
+.con_inline{
+    display: block;
+    text-decoration: none;
+    color:orangered;
+}
+.iframe{
+    margin-top: 50px;
+    margin-left: 40px;
+}
+div.another_contact .contact_wave1:hover{
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+div.another_contact .contact_wave:hover{
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+div.for_patt .patt_sub:hover{
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+div.con_align2 .email_but:hover{
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+.fixed{
+    position: fixed;
+    bottom: 80px;
+    background-color: white;
+    color: black;
+    width: 100%;
+}
+.con_martop{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.con_paraa{
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+.con_learn{
+    display: inline-block;
+    text-decoration: none;
+    color: orangered;
+}
+div.key_gird{
+    float: right;
+    margin-right:50px;
+   padding-top:35px;
+}
+.design_by2{
+    float: left;
+    margin-left: 90px;
+}
+.con_accept{
+    font-family: Noto_ita;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 65px;
+}
+.con_more{
+    display: inline-block;
+    text-decoration: none;
+    color: brown;
+}
+div.fixed .con_accept:hover{
+    transform:translate(4px,-3px);
+    transition-duration: 0.5s;
+}
+.ser_back{
+    background-image: url(../img4prj/Service.jpg);
+    height: 900px;
+}
+.Ser_head{
+    font-family: Notoo;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+}
+.Ser_Parag{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+div.Ser_headtwo ul li{
+    margin-left: 60px;
+    margin-top: 10px;
+}

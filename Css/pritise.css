@@ -1,0 +1,12 @@
+span{
+   /* color:#ff0000;  hex code*/
+  /*  color: #f00;*/
+    color: rgb(166,23 ,27 );
+    line-height: 96px;
+    /*letter-spacing: 20px;*/
+    word-spacing: 30px;
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}

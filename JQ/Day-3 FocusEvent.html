@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function (params) {
+        $('#balance').on('focus',function (params) {
+            var pay = Number($('#pay').val())
+            var total = Number($('#total').val())
+            var balance = Number($('#balance').val())
+        })
+        })
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="number" name="total" id="total">
+        <br>
+        <input type="number" name="pay" id="pay">
+        <br>
+        <input type="number" name="balance" id="balance">
+    </form>
+</body>
+</html>

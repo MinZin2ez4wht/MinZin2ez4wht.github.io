@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+     $(function(param) {
+     var btn = $(".mybtn");
+     btn.on('click',function(param){
+        //console.log('clicked!');
+        $("p").hide(5000,function(param){
+            alert("Done For Hidden!")
+        });
+      })
+      $("a").on("click",function(e){
+    alert('Hi');
+    e.preventDefault();//Can using For Form
+      })
+      $('#year').on('change',function(param){
+          var year = $(this).val();
+          if(year > 1){
+              $('#major').show();
+          }else{
+              $('#major').hide();
+          }
+      })
+      $("#myform").on('submit',function(e){
+         var err = false;
+         // for username
+         var username = $("#username").val();
+         if(username.length <= 5){
+             err = true;
+         }
+         // for ph no
+         var phoneno = $("#phoneno").val();
+         if(phoneno.length <= 5){
+             err = true;
+         }
+         if(err){
+          e.preventDefault();
+         }
+      })
+    })
+    </script>
+</head>
+<body>
+    <a href="https://Google.com" target="_blank">Go Google</a>
+   <p>
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quas, aperiam labore enim commodi expedita placeat quidem quis. Excepturi possimus pariatur nisi,
+       ad quaerat architecto velit odit neque qui commodi.
+   </p>
+   <button class="mybtn">Click</button>
+   <form action="" id="myform">
+       <input type="text" name="username" placeholder="User Name : " id="username">
+      <input type="text" name="phoneno" placeholder="Phone Number : " id="phoneno">
+   <select name="year" id="year">
+       <optgroup label="Acedemic year">
+       <option value="1">First Year</option>
+       <option value="2">Second Year</option>
+       <option value="3">Third Year</option>
+       <option value="4">Fourth Year</option>
+    </optgroup>
+    </select>
+    <div id="major" style="display: none;">
+    <input type="radio" name="major" checked="checked" value="ct">CT
+    <input type="radio" name="major" value="cs">CS
+    </div>
+
+    <br>
+   <button type="submit">Save</button>
+</form>
+</body>
+</html>

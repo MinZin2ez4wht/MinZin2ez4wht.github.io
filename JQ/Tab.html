@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul.link-wapper {
+        list-style-type: none;
+        margin: 20px;
+        padding: 0;
+        text-align: center;
+    }
+
+    ul.link-wapper li {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    ul.link-wapper li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+    }
+
+    ul.link-wapper li a.active{
+        color: #0037ff;
+        border-bottom: 1px solid red;
+    }
+
+    div.content {
+        max-width: 800px;
+        background-color: orange;
+        padding: 20px 50px;
+        margin: 0 auto 10px;
+        display: none;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 250px 250px 250px;
+      padding: 10px;
+    }
+
+    .grid-item {
+      padding: 20px;
+    }
+
+    div.country {
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .country-info {
+      padding: 20px;
+    }
+
+    .country-info .name{
+      margin-top: 0;
+    }
+
+  </style>
+  <script src="jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    $(function (param) { 
+      $('.content').first().slideDown();
+
+      $('ul.link-wapper li a').on("click",function (event) { 
+          var current_tab = $(this);
+          $('ul.link-wapper li a').removeClass('active');
+          current_tab.addClass('active');
+
+          $('.content').slideUp();
+          current_tab_href = current_tab.attr('href'); // #home
+          $(current_tab_href).slideDown(); // $('#home')
+
+          event.preventDefault();
+      })
+
+      // Save to LS
+      $(".atc").on("click",function (param) { 
+        var name = $(this).data("name");
+        var price = $(this).data("price");
+        var id = $(this).data("id");
+
+        var item ={id:id, name:name, price:price, qty:1}
+
+        var cartArr = [];
+        var cartStr = localStorage.getItem("mycart");
+        if(!cartStr){
+          cartArr.push(item)
+        }else{
+          cartArr = JSON.parse(cartStr)
+
+          var old = false;
+
+          $.each(cartArr,function (i,v) { 
+            if(v.id == id && old==false){
+              v.qty++;
+              old = true
+            }
+          })
+
+          if(old == false){
+              cartArr.push(item)
+          }
+        }
+        localStorage.setItem("mycart",JSON.stringify(cartArr));
+        cartnoti();
+        showData();
+
+        Swal.fire({
+           position:'top-center',
+           icon:"success",
+          title:'Your work has been saved',
+          showConfirmButton:false,
+          timer:1500
+        })
+      })
+
+      // Cart Noti
+      cartnoti();
+
+      function cartnoti(){
+        var cartStr = localStorage.getItem("mycart");
+        var noticount = 0;
+        if(cartStr){
+          var cartArr = JSON.parse(cartStr);
+          $.each(cartArr,function (i,v) { 
+            noticount += v.qty;
+           })
+        }
+        $("#cartnoti").html(noticount);
+      }
+
+      // Cart Table
+      showData();
+
+      function showData(){
+        var cartStr = localStorage.getItem("mycart");
+        var data = ""
+        var total = 0
+        if(cartStr){
+          var cartArr = JSON.parse(cartStr);
+          $.each(cartArr,function (i,v) { 
+            total += v.price*v.qty
+            data += `<tr>
+                      <td>${++i} <button class="btndel" data-index="${--i}">X</button></td>
+                      <td>${v.name}</td>
+                      <td>${v.price}</td>
+                      <td>
+                        <input type="number" value="${v.qty}" min="1" class="changeqty" data-index="${i}">
+                      </td>
+                      <td>${v.price*v.qty}</td>
+                    </tr>`
+          })
+
+          data += `<tr>
+                    <td colspan="4">Total</td>
+                    <td>${total}</td>
+                  </tr>`
+        }
+        $("#tbody").html(data)
+      }
+
+      // Delete Row
+      $("#tbody").on("click",".btndel",function (param) { 
+        // alert("hi");
+        //var option = confirm('Are you sure?');
+        // console.log(option)
+        //if(option){
+          //}
+         
+        Swal.fire({
+          title:'Are you sure?',
+          text:"You won't be able to revert this!",
+          icon:'warning',
+          showConfirmButton:true,
+          cancelButtonColor: '#3085d6',
+          confirmButtonText:'Yes.delete it!'
+        }).then((result)=>{
+          if (result.isConfirmed){
+          //  alert('please delete!')
+          var index = $(this).data("index");
+          var cartStr = localStorage.getItem("mycart");
+          var cartArr = JSON.parse(cartStr);
+          cartArr.splice(index,1)
+          localStorage.setItem("mycart",JSON.stringify(cartArr));
+          cartnoti();
+          showData();
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted',
+              'success'
+            )
+          }
+        })
+        
+        
+       })
+
+       $("#tbody").on("change",".changeqty",function (param) { 
+        var qty = Number($(this).val());
+        var index = $(this).data("index");
+        // alert(index);
+        var cartStr = localStorage.getItem("mycart");
+        var cartArr = JSON.parse(cartStr);
+        cartArr[index].qty = qty;
+        localStorage.setItem("mycart",JSON.stringify(cartArr));
+        cartnoti();
+        showData();
+       })
+    })
+  </script>
+</head>
+<body>
+  <div class="tab">
+    <ul class="link-wapper">
+      <li>
+        <a href="#home" class="active">Home</a>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+      <li>
+        <a href="#shop">Shop</a>
+      </li>
+      <li>
+        <a href="#cart">Cart</a><span id="cartnoti" style="color: red;"></span>
+      </li>
+    </ul>
+
+    <div class="content" id="home">
+      <h3>Home Page</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam et molestias, fugiat praesentium perferendis, voluptas officia error qui totam laudantium eum quas eius architecto. Aspernatur veniam rem facere vitae voluptatum.</p>
+    </div>
+
+    <div class="content" id="about">
+      <h3>About Page</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam et molestias, fugiat praesentium perferendis, voluptas officia error qui totam laudantium eum quas eius architecto. Aspernatur veniam rem facere vitae voluptatum.</p>
+    </div>
+
+    <div class="content" id="contact">
+      <h3>Contact Page</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam et molestias, fugiat praesentium perferendis, voluptas officia error qui totam laudantium eum quas eius architecto. Aspernatur veniam rem facere vitae voluptatum.</p>
+    </div>
+
+    <div class="content" id="shop">
+      <h2>Shop Page</h2>
+
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="country">
+            <img src="../JQ/JQ_Pic/B-1.jpg" alt="" style="width:100%;height:170px;">
+            <div class="country-info">
+              <h4 class="name">Item One</h4>
+              <p>Price: 3000</p>
+              <button class="atc" data-name="Item One" data-price="3000" data-id="1">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="country">
+            <img src="../JQ/JQ_Pic/B-2.webp" alt="" style="width:100%;height:170px;">
+            <div class="country-info">
+              <h4 class="name">Item Two</h4>
+              <p>Price: 4500</p>
+              <button class="atc" data-name="Item Two" data-price="4500" data-id="2">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="country">
+            <img src="../JQ/JQ_Pic/B-3.jpg" alt="" style="width:100%;height:170px;">
+            <div class="country-info">
+              <h4 class="name">Item Three</h4>
+              <p>Populations: 1200</p>
+              <button class="atc" data-name="Item Three" data-price="1200" data-id="3">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content" id="cart">
+      <h3>Cart Page</h3>
+      <table width="100%" border="1" cellspacing="0">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html> 

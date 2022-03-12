@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+      <script>
+          $(function (params) {
+          /*$.ajax({
+                url:"https://api.imgflip.com/get_memes",
+                type:"GET",
+                  dataType:"json",
+            }).done(function (json) {
+                console.log(json.data.memes);
+                 var data=""
+                  $.each(json.data.memes,function (i,v){
+                      data+=`<img src="${v.url}"width ="100">`
+                      $("#memes").html(data);
+                  })
+              })*/
+              $("#mybtnget").on("click",function (params) {
+                  
+              
+              $.get("https://api.imgflip.com/get_memes",function(response) {
+                console.log(response);
+                var data=""
+                  $.each(response.data.memes,function (i,v){
+                      data+=`<img src="${v.url}"width ="100">`
+                      $("#memes").html(data);
+                  })
+              })
+          })
+          $("#mybtnpost").on("click",function (params) {
+              $.post("https://api.imgflip.com/caption_image",{
+                template_id:"181913649" ,
+                username: "R1nGoD.",
+                password:"17yrtorich" ,
+                text0: "Sk:Ta nae 6hrs miee pay ml",
+                text1: "Sk:1week lone 24hrs miee pyt ml",
+              },function (response) {
+               // console.log(response);
+               var img = `<img src="${response.data.url}"width=500px">`
+               $("#memes").html(img)
+              })
+          }) 
+        })
+      </script>
+</head>
+<body>
+    <button id="mybtnget">GET METHOD</button>
+    <button id="mybtnpost">POST METHOD</button>
+    <div id="memes">
+    </div>
+</body>
+</html>

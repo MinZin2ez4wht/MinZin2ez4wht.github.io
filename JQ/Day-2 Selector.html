@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+    $(function(param) {
+      var ele = $("#myp");
+      //console.log(ele);
+      ele.click(function (param){
+          $(this).hide(); // current ele
+      })
+
+      var ele2 = $(".mybtn");
+      ele2.click(function(param){
+          $('#myp').hide();
+      })
+      var ele3 = $("p.intro");
+      //console.log(ele3);
+      var ele4= $('ul li:first');
+     // console.log(ele4);
+
+     var ele5 = $('#contents ul.people li');
+     //console.log(ele5);
+
+    })
+    </script>
+</head>
+<body>
+    <p id="myp intro">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil maiores eum inventore nesciunt delectus non quasi ullam voluptates aperiam deleniti reiciendis soluta,
+    omnis porro nobis sint quae impedit autem qui.</p>
+    <p id="myp">This is second P tag.</p>
+    <button class="mybtn">Click</button>
+    <h2  class="intro">This is JQ</h2>
+
+    <ul>
+        <li>Kyaw</li>
+        <li>Su</li>
+        <li>Myat</li>
+    </ul>
+    <div id="contents">
+        <ul class="people">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    </div>
+
+    <form action="">
+        <input type="text" name="username">
+        <input type="text" name="username">
+    </form>
+</body>
+</html>

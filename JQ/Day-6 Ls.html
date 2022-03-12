@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function (params) {
+            $("#myform").on("submit",function (e) {
+                $(".addtocart").on("click",function (params) {
+                    // ******
+                    var name = $(this).data("name");
+                    var price = $(this).data("price");
+                    var id = $(this).data("id");
+
+                    var item = {
+                      id : id , name: name,price: price ,qty:1                    }
+                })
+                 console.log(item);
+
+                 var cartArr = []
+                 var cartStr =localStorage.getItem('cart')
+                 //console.log($.type(cartStr));
+                 if(!cartStr){
+                  cartArr.push(item);
+                }else{
+                    CartArr = JSON.parse(cartStr);// String to JS data type
+                    cartArr.push(item);
+                }
+                localStorage.setItem('cart',JSON.stringify(cartArr));
+                
+                var username = $.trim($("#username").val());
+                var age = Number($("#age").val());
+               // console.log(age);
+                //console.log(`${username} - ${age}`)
+                //console.log($.type(age));
+                var person={
+                    name:username,
+                    age:age
+                }
+                console.log(person);
+                localStorage.setItem("person",JSON.stringify(person))
+                e.preventDefault();
+            })
+        })
+    </script>
+</head>
+<body>
+    <form action="" id="myform">
+        <input type="text" name="username" placeholder="MgMg" id="username"><br>
+        <input type="number" name="age" id="age"><br>
+        <input type="submit" value="Save">
+    </form>
+    <div class="card">
+        <img src="p1.jpg">
+        <p>Item 1</p>
+        <button class="addtocart" data-name="Item One" data-price="5000" data-id="1">ADD</button>
+    </div>
+    <div class="card">
+        <img src="p1.jpg">
+        <p>Item 2</p>
+        <button class="addtocart" data-name="Item two" data-price="4500" data-id="1">ADD</button>
+    </div>
+</body>
+</html>

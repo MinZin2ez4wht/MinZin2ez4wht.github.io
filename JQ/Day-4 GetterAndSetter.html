@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .para{
+            color: red;
+            font-size: 15px;
+            font-weight:bold;
+        }
+    </style>
+    <script>
+        $(function(param){
+            let students = [
+        {name:'RinGod',age:18,gender:'male'},
+        {name:'Rin',age:19,gender:'male'},
+        {name:'RinGo',age:8,gender:'male'},
+        {name:'Ri',age:10,gender:'female'},
+    ];
+    var data = '';
+    $.each(students,function (index,value) {
+        data += `
+        <tr>
+            <td>${++index}</td>
+            <td>${value.name}</td>
+            <td>${value.age}</td>
+            <td>${value.gender}</td>
+        </tr>
+        `
+    })
+    $('tbody').html(data);
+    $('#myform').on('submit',function (e) {
+        e.preventDefault();
+        var username = $('#username').val();
+        console.log(username);
+
+        $('#username').val(username.trim());
+    })
+    $('#mybtn').on('click',function (params) {
+        //var text = $('#mylink').text();
+        //var link = $('mylink').attr('herf');
+        
+        $('#mylink').text('Facebook');
+        $('#mylink').attr('herf','https://facebook.com');
+        $('#mylink').css({
+            "text-decoration": "none"
+        });
+    })
+      $('#mysecondbtn').on("click",function(param){
+          $("p").addClass("para");
+      })
+        
+        });
+    </script>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+    
+        </tbody>
+     </table>
+    <form action="" id="myform">
+        <input type="text" name="username" id="username"><br>
+        <input type="submit" value="Save">
+    </form>
+    <a href="https://google.com" id="mylink">Google</a>
+     
+    <button id="mybtn">Change</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum est in omnis nemo aut accusantium fuga blanditiis obcaecati debitis, voluptate mollitia commodi,
+        magnam quos quas ipsa incidunt repellendus? Vero, dignissimos.</p>
+     <button id="mysecondbtn">Click</button>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array</title>
+</head>
+<body>
+    <h3>JS Array</h3>
+    <h4>Your Order Table</h4>
+    <table border="1" cellpadding="10">
+           <thead>
+               <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+
+               </tr>
+                 
+           </thead>
+           <tbody id="itemlist">
+
+           </tbody>
+
+    </table>
+<script>
+    const a=[1,2,3]
+    const b=Array.of(4,5,6)
+    console.log(a,b);
+
+    const student=['Mg Mg' , 23 , 'Yangon',['php','js']]
+    console.log(student[3] [1]);
+
+    const c=Array(12).fill(0)
+    console.log(c.length);
+
+    a.push(4)
+    a.push(5)
+    console.log(a);
+
+    a.unshift(6)
+    a.unshift(7)
+    console.log(a);
+
+    console.log(a.pop());
+    console.log(a);
+
+    console.log(a.splice(3,1));
+    console.log(a);
+
+    console.log(a.shift());
+    console.log(a);
+
+    const d=a.concat(b)
+    console.log(d);
+
+    const e=[...a,...b]
+    console.log(e);
+
+    const order=[
+        [ 'Coffee Mix', 2300 , 3 ],
+        [ 'Tea Mix' , 2000 , 2 ],
+        [ 'Cake' , 1500 , 5 ]
+    ]
+
+    console.log(order);
+
+    let html=''
+    let total=0
+    let i=1
+
+    order.forEach(
+        (element) => {
+            console.log(element);
+            let itemName=element[0]
+            let itemPrice=element[1]
+            let itemQuantity=element[2]
+            let subtotal=itemPrice*itemQuantity
+            // total=total + subtotal
+
+            total += subtotal
+            console.log(itemName,itemPrice,itemQuantity,subtotal,total);
+           
+            html +=`
+                    <tr>
+                        <td>${i++}</td>
+                        <td>${itemName}</td>
+                        <td>${itemPrice}</td>
+                        <td>${itemQuantity}</td>
+                        <td>${subtotal}</td>
+                        
+                    </tr>
+
+
+            
+            `;
+
+        }
+    )
+    html +=`
+            <tr>
+                <td colspan='4'>Total</td>
+                <td>${total}</td>
+                
+            </tr>
+    
+    
+    `    
+    
+    document.querySelector("#itemlist").innerHTML=html
+
+     
+     console.log(a.find(x => x<=4));
+
+     console.log(a.findIndex(x => x==39));
+
+                console.log(a.includes(3 , 2 )); 
+
+</script>
+    
+</body>
+</html>

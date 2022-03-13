@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS OBJECT</title>
+</head>
+<body>
+    <h3>JS Object properties amd method</h3>
+    <script>
+        const Car = {
+            color : 'blue',
+            'the color':'blue'
+        }
+        console.log(Car);
+        console.log(Car.color);
+        console.log(Car['the color']);
+        const Car2={
+            brand : {
+                name : 'Ford'
+            },
+            color : 'black'
+
+        }
+        console.log(Car2);
+        console.log(Car2.brand.name);
+        console.log(Car2.color);
+        Car2.color='white';
+        Car2.brand.name='Toyota';
+        console.log(Car2);
+
+        Car2.model='EcoSport';
+        console.log(Car2);
+        delete Car2.color;
+        console.log(Car2);
+
+        const Car3={
+            brand : 'Ford',
+            model : 'Everest',
+            start : () => {
+                console.log('Started');
+                console.log(`${this.brand} and ${this.model}`);
+            } ,
+            goTo : function(destination='Mandalay'){
+                console.log(`Going to ${destination}`);
+            }
+        }
+        Car3.start();
+        Car3.goTo('Yangon');
+        Car3.goTo();
+    
+    </script>
+</body>
+</html>

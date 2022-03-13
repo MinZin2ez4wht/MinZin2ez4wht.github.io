@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam</title>
+</head>
+<body>
+      <fieldset>
+    <legend><h3>Exams Marks Calculator</h3></legend>
+    <label for="Subject1">Subject1</label>
+    <input type="number" name="Subject1" id="Subject1"><br>
+    <label for="Subject2">Subject 2</label>
+    <input type="number" name="Subject 2" id="Subject2"><br>
+    <label for="Subject3">Subject3</label>
+    <input type="number" name="Subject3" id="Subject3"><br>
+    <button onclick="calculate()">Calculate</button><br>
+    <label id="total"></label><br>
+    <label id="result">Result</label>
+    <script>
+        function calculate(){
+         let Subject1= parseInt(document.querySelector("#Subject1").value);
+         let Subject2= parseInt(document.querySelector("#Subject2").value);
+         let Subject3= parseInt(document.querySelector("#Subject3").value);
+         let max=100 ;
+         let min=0;
+         if( (Subject1>=min&&Subject1<=max) && (Subject2>=min&&Subject2<=max) && (Subject3>=min&&Subject3<=max)){
+         console.log(Subject1,Subject2,Subject3);
+         let sum = Subject1 + Subject2 + Subject3;
+         let result=`Total result : ${sum}<br>`
+         console.log(result);
+         let examResult
+     if (Subject1>=40 && Subject1>=40 && Subject3>=40){
+         examResult='Pass';
+         if (Subject1>=80 || Subject2>=80 || Subject3>=80)
+         examResult='Pass with Distinction!';
+     
+     }else{
+         examResult='Fail';
+     }
+     document.querySelector('#result').innerHTML=examResult;
+     document.querySelector('#total').innerHTML=result
+    
+    }else{
+                alert('Please enter marks value in 0 to 100!');
+    }
+    
+           
+     
+        }
+          
+
+
+
+    </script>
+    </fieldset>
+</body>
+</html>

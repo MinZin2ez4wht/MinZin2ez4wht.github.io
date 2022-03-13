@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Form</title>
+</head>
+<body onload="show()">
+    <h3>Form Submit Action</h3>
+     <form action="register.php" method="get" onsubmit="//return check()" >
+       <label for="name">Name</label>
+       <input type="text" name="name" id="name" onchange="show()" ><br>
+       <label for="email">Email</label>
+       <input type="email" name="name" id="email"><br>
+       <label for="Password">Password</label>
+       <input type="password" name="password" id="password"><br>
+       <label for="confirmPassword">Confirm Password</label>
+       <input type="password" name="confirmPassword" id="confirmPassword"><br>
+       <input type="submit" value="Register">
+     </form>
+     <script>
+       function show(){
+          alert('Hi !')
+       }
+       function check(){
+         // 1. get 2 passwords value using DOM
+      let password=document.querySelector("#password").value;
+      let confirmPassword=document.querySelector("#confirmPassword").value;
+         // 2. check the 2 value are equal or not
+         console.log(password,confirmPassword);
+         if(password===confirmPassword){
+           return true;
+         }else{
+           alert('Password and Confirm Password doesnot match!');
+           return false;
+         }
+         
+         //3.return true or false based on the comparison result
+        // return false;
+       }
+     </script>
+</body>
+</html>

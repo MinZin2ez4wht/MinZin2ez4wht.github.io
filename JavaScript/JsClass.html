@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Class</title>
+</head>
+<body>
+    <h3>JS Class</h3>
+    <script>
+    const ford = {
+        brand : 'Ford',
+        model : 'Cross'
+    }
+      const toyota={
+          brand : 'Toyota',
+          model : 'Fit'
+      }
+       const honda = {
+           brand : 'Honda',
+           model : 'Fit'
+       }
+       class Car{
+           brand ;
+           model ;
+           showdata(){
+               console.log(`${this.brand} and ${this.model}`);
+           }
+       }
+       const nissan = new Car ();
+       const fiet= new Car();
+       console.log(nissan);
+       console.log(fiet);
+
+       nissan.brand='Nissan';
+       nissan.model='Sunny';
+       fiet.brand='Fiet'
+       fiet.model='Panda'
+       console.log(nissan,fiet);
+       nissan.showdata();
+       fiet.showdata()
+
+       class Person{
+           constructor(name,city){
+               this.name = name;
+               this.city = city;    
+           }
+           showData(){
+               console.log(`My name is ${this.name} and I an from ${this.city}`);
+           }
+           static SayHi(){
+               console.log('Hi from Person Static Method!');
+           }
+           
+       }Person.SayHi();
+        const mgmg=new Person('Mg Mg','Yangon')
+        console.log(mgmg);
+        mgmg.showData();
+
+        const mama=new Person('MaMa','Mandalay');
+        mama.showData();
+        console.log(mama.city,mama.name);
+
+        class Programmer extends Person{
+            constructor(name,city,laptop){
+                super(name,city);
+                this.laptop = laptop ;
+                
+            }
+             showData(){
+                 super.showData();
+                 console.log(`My laptop is ${this.laptop}`);
+             }
+
+        }
+         const MinZin=new Programmer('MinZin','Yangon','Dell')
+         MinZin.showData();
+         
+       </script>
+</body>
+</html>

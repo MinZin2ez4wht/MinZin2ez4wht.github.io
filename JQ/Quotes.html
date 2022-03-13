@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <style>
+       div#Btn{
+       background-color:black; 
+       height: 180px;
+       text-align: center;
+    } 
+     #header{
+         font-family: regular;
+         text-align: center;
+         color: white;
+     }
+     #Writer{
+         font-family:Sans;
+         text-align: center;
+         color: white;
+     }
+     #See_More{
+         margin-left: 30px;
+         color: white;
+         font-family: regular;
+     }
+     .Mybtn{
+         font-family: Noto;
+         background-color: orange;
+         border-radius: 5px;
+         padding-top: 5px;
+         padding-bottom: 5px;
+     }
+     @font-face {
+    font-family:regular ;
+    src: url(../Beerprj/Great_Vibes/NotoSerif-Regular.ttf);
+}
+  @font-face {
+    font-family:Sans ;
+    src: url(../Beerprj/Great_Vibes/OpenSansCondensed-Light.ttf);
+}
+@font-face {
+    font-family:Noto ;
+    src: url(../Beerprj/Great_Vibes/NotoSerif-Bold.ttf);
+}
+    </style>
+     <script src="jquery.min.js"></script>
+     <script>
+         $(function (params) {
+             $("#Btn").on("click",function (params) {
+                 $.ajax({url:"https://type.fit/api/quotes",type:"GET",dataType:"json",
+                }).done(function (json) {
+                     console.log(json)
+                     var data = ""
+                     $.each(json,function (i,v) {
+                         data +=`<div id=quote_div> <p><q>${json[i].text}</q><p>
+                            <p>Written By - ${json[i].auother}</p></div>`
+                         
+                     }) 
+                     $("#quotes").html(data)
+                 })
+             })
+         })
+     </script>
+</head>
+<body>
+    <div id="quotes"></div>
+        <div id="Btn">
+      <h3 id="header">"If you rest , you rust"</h3>
+      <p id="Writer">Written By Helen Haryatt</p>
+      <h2 id="See_More">-If You Want To See More-</h2>
+      <button class="Mybtn">Read More</button>
+      </div>
+</body>
+</html>

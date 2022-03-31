@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(friend,index) in friends">
+             <td>{{++index}}</td>
+             <td>{{friend.name}}</td>
+             <td>{{friend.age}}</td>
+             <td>{{friend.gender}}</td>
+             <td>
+                 <button @click="detail(--index)">More</button>
+             </td>
+            </tr>
+        </tbody>
+    </table>
+    </div> 
+    <script>
+     const app=Vue.createApp({
+         data(){
+             return{
+                 name:"Min Zin",
+                 friends:[
+                     {name:"susu",age:23,gender:'female'},
+                     {name:"koko",age:33,gender:"male"},
+                     {name:"tuntun",age:25,gender:"male"},
+                     {name:"mya",age:35,gender:"female"},
+                 ],
+             }
+         },
+         methods:{
+             detail(index){
+                 let friend = this.friends[index]
+                 alert(friend.name)
+                }
+            },
+         
+         computed:{
+             arrLength(){
+                 return this.friends.length
+           },
+             boyfriends(){
+                return this.friends.filter(row => row.gender=="male")
+             },
+             girlfriends(){
+                 return this.friends.filter(row =>row.gender=='female')
+           }
+     }
+    
+        })
+        app.mount("#app")
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi Calculator</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="bmi">
+    <form action="" @submit.prevent="calculate">
+        <input type="text" v-model.trim="name" placeholder="Your Name"><br>
+        <input type="number" v-model.number="age" placeholder="Your Age"><br>
+         <input type="number" v-model.number="weight" placeholder="Your Weight"><br>
+         <input type="number" v-model.number="heightft" placeholder="Your Height(Feet)"><br>
+         <input type="number" v-model.number="heightinc" placeholder="Your Height(Inches)"><br>
+         <input type="radio" id="male" v-model="gender">
+        <label for="male">Male</label>   
+        <input type="radio" id="female" v-model="gender">
+        <label for="female">Female</label>
+        <br>
+        <input type="submit" value="Compute Bmi"><br>
+        </form>
+    <div v-if="status==true">
+        <p>
+            Weight = {{weight}} pounds<br>
+            Height = {{heightft}} ft , {{heightinc}} inc
+        </p>
+       <p>Your Bmi is {{body}}</p>
+       <p v-if="body>30">You are Obese</p>
+       <p v-else-if="body>=25 && body <30">You are Overweight</p>
+       <p v else-if="body>=18 && body <=24">You are Healthy</p>
+        <p v-else-if="body<18">You are Underweight</p>
+    </div>
+       <div v-else-if>
+           <div><p>When BMI is higher than 10,This is OBESE.<br>
+            When BMI is between 25 and 30 , This is Over Weight.<br>
+            When BMI is between 18 and 24 , This is Normal Weight.<br>
+            When BMI is under 18 , This is Underweight.
+           </p>
+        </div>
+       </div>
+    <script src="bmi.js"></script>
+</body>
+</html>

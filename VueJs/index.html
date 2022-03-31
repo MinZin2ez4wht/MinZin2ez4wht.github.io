@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Exe-1</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <h3 v-else="status">
+      {{name}} - {{age}} - <span v-html="icon"></span>
+       </h3>
+       <h3 v-else>
+           status => {{status}}
+       </h3>
+       <p v-if="mark>=40 && mark<80">pass</p>
+       <p v-else-if="mark<40">fail</p>
+       <p v-else>D</p>
+ 
+       <p v-bind:title="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad optio officiis aliquam consectetur rerum sequi velit non tempora vel excepturi in dolorem voluptatem,
+                               necessitatibus, esse illum? Impedit tempore ratione corporis!</p>
+       <img :src="photo" alt="">
+        <h2>My Fav Fruits</h2>
+     <ul>
+         <li v-for="fruit in favfruits">{{fruit}}</li>
+     </ul>
+     <button @click="count++">Add 1</button>
+     <p>Count is: {{count}}</p>
+
+     <button @click="great">Great</button>
+     <input type="text" v-model="fname">
+     <span>{{fname}}</span>
+
+     <form action="" @submit.prevent="savefriends">
+         <input type="text" v-model.trim="ffname" placeholder="Name"><br>
+         <input type="text" v-model.number="ffage" placeholder="Age"><br>
+
+         <input type="radio" id="male" v-model="ffgender">
+         <label for="male">Male</label>
+         
+         <input type="radio" id="female" v-model="ffgender">
+         <label for="female">Female</label>
+         <br>
+         
+         <input type="submit" value="Save">
+         </form>
+        </form>
+    <script src="app.js"></script>
+</body>
+</html>

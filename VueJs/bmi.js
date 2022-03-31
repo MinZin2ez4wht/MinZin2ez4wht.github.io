@@ -1,0 +1,21 @@
+const bmi=Vue.createApp({
+    data(){
+        return{
+            status:false,
+            name:"",
+            age:"",
+            gender:"",
+            weight:"",
+            heightft:"",
+            heightinc:"",
+            body:"",
+        }
+    },
+    methods:{
+        calculate(){
+            this.status=true;
+            this.body=((this.weight/((this.heightft*12+this.heightinc)*(this.heightft*12+this.heightinc)))*703)
+        }
+    }
+})
+bmi.mount("#bmi")
